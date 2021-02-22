@@ -182,11 +182,11 @@ FROM ""Orders"" AS ""o""");
                 (await Assert.ThrowsAsync<InvalidOperationException>(
                     () => base.SelectMany_whose_selector_references_outer_source(async))).Message);
 
-        public override async Task Projecting_after_navigation_and_distinct_throws(bool async)
+        public override async Task Projecting_after_navigation_and_distinct(bool async)
             => Assert.Equal(
-                RelationalStrings.InsufficientInformationToIdentifyOuterElementOfCollectionJoin,
+                SqliteStrings.ApplyNotSupported,
                 (await Assert.ThrowsAsync<InvalidOperationException>(
-                    () => base.Projecting_after_navigation_and_distinct_throws(async))).Message);
+                    () => base.Projecting_after_navigation_and_distinct(async))).Message);
 
         public override async Task Select_nested_collection_deep(bool async)
             => Assert.Equal(

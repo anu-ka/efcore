@@ -1144,9 +1144,9 @@ ORDER BY c[""CustomerID""]");
         }
 
         [ConditionalTheory(Skip = "Issue#17246")]
-        public override async Task Projecting_after_navigation_and_distinct_throws(bool isAsync)
+        public override async Task Projecting_after_navigation_and_distinct(bool isAsync)
         {
-            await base.Projecting_after_navigation_and_distinct_throws(isAsync);
+            await base.Projecting_after_navigation_and_distinct(isAsync);
 
             AssertSql(" ");
         }
